@@ -3,7 +3,7 @@ module Lokka
     def self.registered(app)
       app.before do
         if request.host =~ /\.heroku\.com/
-          redirect request.url.sub(/\.heroku\.com/, '.com')
+          redirect(request.url.sub(/\.heroku\.com/, '.com'))
         end
       end
     end
