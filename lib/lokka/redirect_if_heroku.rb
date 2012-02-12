@@ -2,8 +2,9 @@ module Lokka
   module RedirectIfHeroku
     def self.registered(app)
       app.before do
-        site_url = ENV['SITE_URL'] || 'http://heroku.com'
-        redirect site_url, 301 if request.host =~ /\.heroku\.com$/
+        if request.host =~ /\.heroku\.com/
+          redirect request.url.sub(/\.heroku\.com/, '.com')
+        end
       end
     end
   end
