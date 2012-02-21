@@ -1,14 +1,29 @@
-# Lokka "Redirect if Heroku" Plugin
+# Lokka Redirect Host Plugin
 
-This plugin is for the website using Lokka deployed on Heroku. If you setup Heroku custom domain, the website can be accessed by both http://example.com and http://example.heroku.com. This plugin redirects http://example.heroku.com to http://example.com.
+If in the case of access from different hosts, You will be redirected to the host to expect.
 
 ## Installation
 
     $ cd LOKKA_ROOT/public/plugin
-    $ git clone git://github.com/champierre/lokka-redirect_if_heroku.git
+    $ git clone git://github.com/daic-h/lokka-redirect_host.git
 
 ## Usage
 
+If you want to redirect
+
+http://example.heroku.com/about or http://example.herokuapp.com/about
+
+to
+
+http://example.com/about
+
+
 Set your custom domain by the following heroku command.
 
-% heroku config:add SITE_URL=http://example.com
+% heroku config:add REDIRECT_HOST=example.com
+
+## Acknowledge
+
+This plugin is fork of champierre/lokka-redirect_if_heroku.
+
+
