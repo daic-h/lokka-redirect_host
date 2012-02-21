@@ -11,7 +11,7 @@ If in the case of access from different hosts, You will be redirected to the hos
 
 If you want to redirect
 
-http://example.heroku.com/about or http://example.herokuapp.com/about
+http://example.heroku.com/about or http://example.herokuapp.com/about or http://any/about
 
 to
 
