@@ -2,8 +2,12 @@ module Lokka
   module RedirectHost
     def self.registered(app)
       app.before do
-        unless request.host =~ ENV['REDIRECT_HOST']
-          redirect(request.scheme + '://' + ENV['REDIRECT_HOST'] + request.path)
+        if (it = ENV['REDIRECT_HOST']) && (request.host != it)
+          host = "#{request.scheme}://#{it}"
+          host << ":#{request.port}" unless request.port == 80
+          host << request.path
+
+          redirect(host)
         end
       end
     end
