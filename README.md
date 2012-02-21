@@ -17,10 +17,11 @@ to
 
 http://example.com/about
 
+Set Environment variable REDIRECT_HOST
 
-Set your custom domain by the following heroku command.
+If you're using heroku
 
-% heroku config:add REDIRECT_HOST=example.com
+    % heroku config:add REDIRECT_HOST=example.com
 
 ## Acknowledge
 
